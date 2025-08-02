@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Use the correct ID for the Add Task button
   const addButton = document.getElementById('add-task-btn');
   const taskInput = document.getElementById('task-input');
   const taskList = document.getElementById('task-list');
@@ -14,10 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const li = document.createElement('li');
     li.textContent = taskText;
+    li.classList.add('task-item'); // ✅ Add class to list item
 
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
-    removeButton.className = 'remove-btn';
+    removeButton.classList.add('remove-btn'); // ✅ Add class to button
 
     removeButton.onclick = function () {
       taskList.removeChild(li);
@@ -36,6 +36,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Optional call on page load (per instructions, but not required in logic)
-  addTask();
+  addTask(); // Optional
 });
